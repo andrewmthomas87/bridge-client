@@ -1,0 +1,9 @@
+import { configure } from 'mobx'
+
+// Only allow updates to observable data inside of actions
+configure({ enforceActions: true })
+
+import * as React from 'react'
+import { render } from 'react-dom'
+
+render(<h1>Hello world</h1>, document.querySelector('div#root'))
