@@ -2,6 +2,8 @@
 	"dependencies": {
 		"@types/react": "^16.3.12",
 		"@types/react-dom": "^16.0.5",
+		"@types/react-router": "^4.0.24",
+		"@types/react-router-dom": "^4.2.6",
 		"autoprefixer": "^8.3.0",
 		"css-loader": "^0.28.11",
 		"extract-text-webpack-plugin": "^3.0.2",
@@ -13,6 +15,8 @@
 		"precss": "^3.1.2",
 		"react": "^16.3.2",
 		"react-dom": "^16.3.2",
+		"react-router": "^4.2.0",
+		"react-router-dom": "^4.2.2",
 		"style-loader": "^0.21.0",
 		"ts-loader": "3",
 		"typescript": "^2.8.3",

@@ -7,7 +7,10 @@ const extractLess = new ExtractTextPlugin({ filename: '[name].css' })	// [name] 
 const commonConfig = {
 	context: path.resolve('./src'),
 	devtool: 'eval',
-	entry: { app: '.' },
+	entry: {
+		home: 'bundles/home',
+		user: 'bundles/user'
+	},
 	module: {
 		rules: [
 			{
@@ -32,7 +35,7 @@ const commonConfig = {
 	},
 	output: {
 		filename: '[name].js',	// [name] resolves to name of bundle (e.g., app)
-		path: path.resolve('./build')
+		path: path.resolve('./static/build')
 	},
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),

@@ -1,0 +1,64 @@
+@import (reference) '../../../less/variables.less';
+
+nav {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	padding: 2.5em 5em;
+	background-color: @white;
+	overflow: hidden;
+	white-space: nowrap;
+
+	div:first-child {
+		flex: 1;
+		padding-bottom: 0.3em;
+		padding-right: 1em;
+		font-size: 2.5em;
+		font-weight: 700;
+	}
+
+	div:last-child {
+		display: flex;
+		min-width: 15em;
+		overflow-x: scroll;
+		flex-direction: row;
+		align-items: center;
+
+		a {
+			color: @black;
+			padding: 0.75em 2em;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&:hover>span:after {
+				transform: scaleX(1);
+			}
+
+			&.primary {
+				color: @primary;
+
+				>span:after {
+					background-color: @primary;
+				}
+			}
+
+			>span {
+				position: relative;
+				display: inline-block;
+				padding: 6px 0;
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 2px;
+					background-color: @black;
+					transform: scaleX(0);
+					transition: transform 0.25s ease;
+				}
+			}
+		}
+	}
+}

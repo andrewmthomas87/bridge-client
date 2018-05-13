@@ -1,0 +1,44 @@
+@import (reference) './variables.less';
+
+html {
+	color: @black;
+	font-family: 'Karla', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	background-color: @light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+input, textarea, select, button {
+	color: inherit;
+	font: inherit;
+	box-sizing: border-box;
+}
+
+form button {
+	display: block;
+	width: 100%;
+	color: @medium-dark;
+	padding: 0.75em 1em;
+	background-color: @lighter;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	font-size: 1em;
+	cursor: pointer;
+
+	&:active {
+		outline: none;
+	}
+
+	&:hover {
+		color: @white;
+		background-color: @primary;
+	}
+}
