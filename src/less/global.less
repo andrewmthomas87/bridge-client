@@ -21,6 +21,28 @@ input, textarea, select, button {
 	box-sizing: border-box;
 }
 
+@keyframes loading {
+	from {
+		transform: rotate(0deg) translateZ(0);
+	}
+	to {
+		transform: rotate(360deg) translateZ(0);
+	}
+}
+
+div#loading {
+	position: fixed;
+	top: ~'calc(50% - 2.25em)';
+	left: ~'calc(50% - 1.25em)';
+	width: 2.5em;
+	height: 2.5em;
+	background-color: @primary;
+	border-bottom-left-radius: 25%;
+	border-top-right-radius: 25%;
+	animation: loading 0.75s ease infinite;
+	z-index: 1000;
+}
+
 form button {
 	display: block;
 	width: 100%;
@@ -28,10 +50,19 @@ form button {
 	padding: 0.75em 1em;
 	background-color: @lighter;
 	border: none;
-	border-radius: 3px;
+	border-radius: 4px;
 	outline: none;
 	font-size: 1em;
 	cursor: pointer;
+
+	&[disabled] {
+		background-color: @light;
+
+		&:hover {
+			color: @medium-dark;
+			background-color: @light;
+		}
+	}
 
 	&:active {
 		outline: none;
@@ -40,5 +71,122 @@ form button {
 	&:hover {
 		color: @white;
 		background-color: @primary;
+	}
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	padding: 2.5em 5em;
+	background-color: @white;
+	overflow: hidden;
+	white-space: nowrap;
+
+	div:first-child {
+		flex: 1;
+		padding-bottom: 0.3em;
+		padding-right: 1em;
+		font-size: 2.5em;
+		font-weight: 700;
+	}
+
+	div:last-child {
+		display: flex;
+		min-width: 15em;
+		overflow-x: scroll;
+		flex-direction: row;
+		align-items: center;
+
+		a {
+			color: @black;
+			padding: 0.75em 2em;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&:hover>span:after, &.active>span:after {
+				transform: scaleX(1);
+			}
+
+			&.primary {
+				color: @primary;
+
+				>span:after {
+					background-color: @primary;
+				}
+			}
+
+			>span {
+				position: relative;
+				display: inline-block;
+				padding: 6px 0;
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 2px;
+					background-color: @alternate;
+					transform: scaleX(0);
+					transition: transform 0.25s ease;
+				}
+			}
+		}
+	}
+}
+
+section.modal-background {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: fade(@dark, 87.5%);
+	z-index: 1000;
+	cursor: pointer;
+
+	&.visible {
+		display: block;
+	}
+
+	>* {
+		cursor: initial;
+	}
+}
+
+section.page {
+	width: 35em;
+	max-width: ~'calc(100% - 2.5em)';
+	margin: 2.5em auto;
+	background-color: @white;
+	border-radius: 4px;
+	overflow: hidden;
+
+	&.small {
+		width: 25em;
+	}
+
+	&.large {
+		width: 60em;
+	}
+
+	>h3 {
+		padding: 1em;
+		padding-bottom: 0.75em;
+		font-size: 2em;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	>h4 {
+		color: @white;
+		padding: 1em;
+		background-color: @primary;
+		font-size: 1.6em;
+		font-weight: 400;
+		text-align: center;
 	}
 }

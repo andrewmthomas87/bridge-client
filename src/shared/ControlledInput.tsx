@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import './component.less'
-
 interface IProps {
 	title: string
+	value: string
 	block?: boolean
 	large?: boolean
 	disabled?: boolean
@@ -11,7 +10,7 @@ interface IProps {
 	props: Partial<React.InputHTMLAttributes<HTMLInputElement>>
 }
 
-class Input extends React.Component<IProps, {}> {
+class ControlledInput extends React.Component<IProps, {}> {
 
 	public render(): JSX.Element {
 		const className: string = `input ${this.props.block ? 'block' : ''} ${this.props.large ? 'large' : ''}`
@@ -19,7 +18,7 @@ class Input extends React.Component<IProps, {}> {
 		return (
 			<div className={className}>
 				<div>{this.props.title}</div>
-				<input onChange={this._onChange} disabled={this.props.disabled} {...this.props.props} />
+				<input value={this.props.value} onChange={this._onChange} disabled={this.props.disabled} {...this.props.props} />
 			</div>
 		)
 	}
@@ -32,4 +31,4 @@ class Input extends React.Component<IProps, {}> {
 
 }
 
-export default Input
+export default ControlledInput

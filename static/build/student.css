@@ -23,6 +23,39 @@ button {
   font: inherit;
   box-sizing: border-box;
 }
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg) translateZ(0);
+            transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateZ(0);
+            transform: rotate(360deg) translateZ(0);
+  }
+}
+@keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg) translateZ(0);
+            transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateZ(0);
+            transform: rotate(360deg) translateZ(0);
+  }
+}
+div#loading {
+  position: fixed;
+  top: calc(50% - 2.25em);
+  left: calc(50% - 1.25em);
+  width: 2.5em;
+  height: 2.5em;
+  background-color: #ee5253;
+  border-bottom-left-radius: 25%;
+  border-top-right-radius: 25%;
+  -webkit-animation: loading 0.75s ease infinite;
+          animation: loading 0.75s ease infinite;
+  z-index: 1000;
+}
 form button {
   display: block;
   width: 100%;
@@ -34,6 +67,13 @@ form button {
   outline: none;
   font-size: 1em;
   cursor: pointer;
+}
+form button[disabled] {
+  background-color: #c8d6e5;
+}
+form button[disabled]:hover {
+  color: #576574;
+  background-color: #c8d6e5;
 }
 form button:active {
   outline: none;
@@ -100,4 +140,51 @@ nav div:last-child a > span:after {
   transition: -webkit-transform 0.25s ease;
   transition: transform 0.25s ease;
   transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+section.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 47, 62, 0.875);
+  z-index: 1000;
+  cursor: pointer;
+}
+section.modal-background.visible {
+  display: block;
+}
+section.modal-background > * {
+  cursor: auto;
+  cursor: initial;
+}
+section.page {
+  width: 35em;
+  max-width: calc(100% - 2.5em);
+  margin: 2.5em auto;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+section.page.small {
+  width: 25em;
+}
+section.page.large {
+  width: 60em;
+}
+section.page > h3 {
+  padding: 1em;
+  padding-bottom: 0.75em;
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+}
+section.page > h4 {
+  color: #fff;
+  padding: 1em;
+  background-color: #ee5253;
+  font-size: 1.6em;
+  font-weight: 400;
+  text-align: center;
 }

@@ -32,48 +32,6 @@ div.input input:focus {
   border-bottom: 1px solid #ee5253;
   outline: none;
 }
-section#sign-in > section form {
-  padding: 0.75em 1.5em;
-}
-section#sign-in > section form div.error {
-  color: #fff;
-  padding: 0.75em 1.5em;
-  margin-bottom: 1em;
-  background-color: #ee5253;
-  border-radius: 4px;
-  font-size: 0.875em;
-}
-section#sign-up > section > div {
-  display: flex;
-  flex-direction: row;
-}
-section#sign-up > section > div a {
-  flex: 1;
-  color: #576574;
-  padding: 1.5em;
-  background-color: #e4ebf2;
-  font-size: 1em;
-  font-weight: 400;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-section#sign-up > section > div a:hover {
-  color: #fff;
-  background-color: #ee5253;
-}
-section#sign-up > section form {
-  padding: 0.75em 1.5em;
-}
-section#sign-up > section form div.error {
-  color: #fff;
-  padding: 0.75em 1.5em;
-  margin-bottom: 1em;
-  background-color: #ee5253;
-  border-radius: 4px;
-  font-size: 0.875em;
-}
 html {
   color: #111;
   font-family: 'Karla', sans-serif;
@@ -263,4 +221,112 @@ section.page > h4 {
   font-size: 1.6em;
   font-weight: 400;
   text-align: center;
+}
+div.text-area {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 0.75em;
+}
+div.text-area.block {
+  display: flex;
+}
+div.text-area.block textarea {
+  resize: vertical;
+}
+div.text-area.large textarea {
+  font-size: 2em;
+  padding: 0.375em 0.5em;
+  padding-top: 0.25em;
+}
+div.text-area div {
+  color: #576574;
+  padding: 0.375em 0.75em;
+  padding-bottom: 0;
+  font-size: 0.875em;
+}
+div.text-area textarea {
+  padding: 0.75em 1em;
+  padding-top: 0.5em;
+  border: none;
+  border-bottom: 1px solid #c8d6e5;
+  outline: none;
+}
+div.text-area textarea[disabled] {
+  color: #576574;
+}
+div.text-area textarea:focus {
+  border-bottom: 1px solid #ee5253;
+  outline: none;
+}
+section.date-selector {
+  padding: 0.25em 1em;
+  padding-bottom: 1em;
+}
+section.date-selector div.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 0.25em;
+}
+section.date-selector div.controls a {
+  color: #222f3e;
+  width: 1em;
+  height: 1em;
+  padding: 0.75em;
+  background-color: #e4ebf2;
+  border-radius: 50%;
+  font-weight: 400;
+  font-size: 0.875em;
+  line-height: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+section.date-selector div.controls a:hover {
+  color: #fff;
+  background-color: #2e86de;
+}
+section.date-selector div.controls h3 {
+  flex: 1;
+  color: #222f3e;
+  padding: 0.5em;
+  font-size: 1.5em;
+  font-weight: 200;
+  text-align: center;
+}
+section.date-selector div.calendar {
+  border: 1px solid #e4ebf2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+section.date-selector div.calendar > div {
+  overflow: hidden;
+  line-height: 0;
+}
+section.date-selector div.calendar > div div {
+  display: inline-block;
+  width: 14.2857142857%;
+  padding: 0.5em 1em;
+  overflow: hidden;
+  line-height: normal;
+  line-height: initial;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+section.date-selector div.calendar div.labels {
+  padding: 0.5em 0;
+  background-color: #e4ebf2;
+}
+section.date-selector div.calendar div.days div {
+  height: 3em;
+}
+section.date-selector div.calendar div.days div.day {
+  cursor: pointer;
+}
+section.date-selector div.calendar div.days div.day:hover {
+  color: #fff;
+  background-color: #2e86de;
+}
+form {
+  padding: 0.75em 1.5em;
 }

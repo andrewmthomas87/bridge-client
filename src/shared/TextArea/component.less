@@ -1,6 +1,6 @@
 @import (reference) '../../less/variables.less';
 
-div.input {
+div.text-area {
 	display: inline-flex;
 	flex-direction: column;
 	align-items: stretch;
@@ -8,13 +8,17 @@ div.input {
 
 	&.block {
 		display: flex;
+
+		textarea {
+			resize: vertical;
+		}
 	}
 
-	&.large input {
+	&.large textarea {
 		font-size: 2em;
 		padding: 0.375em 0.5em;
 		padding-top: 0.25em;
-	}
+}
 
 	div {
 		color: @medium-dark;
@@ -23,7 +27,7 @@ div.input {
 		font-size: 0.875em;
 	}
 
-	input {
+	textarea {
 		padding: 0.75em 1em;
 		padding-top: 0.5em;
 		border: none;

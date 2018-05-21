@@ -7,7 +7,7 @@ import Group from './Group'
 import './component.less'
 
 const TypeSelect: React.StatelessComponent<{}> = (): JSX.Element => (
-	<section>
+	<section className='page small'>
 		<h3>Sign up as a...</h3>
 		<div>
 			<Link to='/sign-up/student' onClick={this._onSelectStudent}>Student</Link>

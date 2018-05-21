@@ -2,30 +2,6 @@
 
 section#sign-up {
 	>section {
-		width: 25em;
-		max-width: ~'calc(100% - 2.5em)';
-		margin: 2.5em auto;
-		background-color: @white;
-		border-radius: 5px;
-		overflow: hidden;
-
-		h3 {
-			padding: 1em;
-			padding-bottom: 0.75em;
-			font-size: 2em;
-			font-weight: 400;
-			text-align: center;
-		}
-
-		h4 {
-			color: @white;
-			padding: 1em;
-			background-color: @primary;
-			font-size: 1.6em;
-			font-weight: 400;
-			text-align: center;
-		}
-
 		>div {
 			display: flex;
 			flex-direction: row;
@@ -51,6 +27,15 @@ section#sign-up {
 
 		form {
 			padding: 0.75em 1.5em;
+
+			div.error {
+				color: @white;
+				padding: 0.75em 1.5em;
+				margin-bottom: 1em;
+				background-color: @primary;
+				border-radius: 4px;
+				font-size: 0.875em;
+			}
 		}
 	}
 }

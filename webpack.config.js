@@ -9,7 +9,8 @@ const commonConfig = {
 	devtool: 'eval',
 	entry: {
 		home: 'bundles/home',
-		user: 'bundles/user'
+		student: 'bundles/student',
+		group: 'bundles/group'
 	},
 	module: {
 		rules: [

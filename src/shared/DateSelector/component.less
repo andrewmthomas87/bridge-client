@@ -1,0 +1,82 @@
+@import (reference) '../../less/variables.less';
+
+section.date-selector {
+	padding: 0.25em 1em;
+	padding-bottom: 1em;
+
+	div.controls {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding-bottom: 0.25em;
+
+		a {
+			color: @dark;
+			width: 1em;
+			height: 1em;
+			padding: 0.75em;
+			background-color: @lighter;
+			border-radius: 50%;
+			font-weight: 400;
+			font-size: 0.875em;
+			line-height: 1em;
+			text-align: center;
+			cursor: pointer;
+
+			&:hover {
+				color: @white;
+				background-color: @alternate;
+			}
+		}
+
+		h3 {
+			flex: 1;
+			color: @dark;
+			padding: 0.5em;
+			font-size: 1.5em;
+			font-weight: 200;
+			text-align: center;
+		}
+	}
+
+	div.calendar {
+		border: 1px solid @lighter;
+		border-radius: 4px;
+		overflow: hidden;
+
+		>div {
+			overflow: hidden;
+			line-height: 0;
+
+			div {
+				display: inline-block;
+				width: 14.2857142857%;
+				padding: 0.5em 1em;
+				overflow: hidden;
+				line-height: initial;
+				text-overflow: ellipsis;
+				box-sizing: border-box;
+			}
+		}
+
+		div.labels {
+			padding: 0.5em 0;
+			background-color: @lighter;
+		}
+
+		div.days {
+			div {
+				height: 3em;
+
+				&.day {
+					cursor: pointer;
+
+					&:hover {
+						color: @white;
+						background-color: @alternate;
+					}
+				}
+			}
+		}
+	}
+}
